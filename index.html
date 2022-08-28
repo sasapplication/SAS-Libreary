@@ -1,64 +1,150 @@
 <!DOCTYPE html>
-<body lang="en">
-  
-<head>
-    <header>
-        <h1>E- Library</h1>
-        <h2>by SAS Group</h2>
-    </header>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAS Library</title>
-    </head>
-    <style>
-        header {
-    text-align: center;
-    background-color: rgb(247, 13, 13);
-    color: #fff;
-    padding: 20px;
-  }
-        h1{
-            color: rgb(239, 233, 233);
-        }
-        h2  {
-    font-size: 10px;
-  }
-  h3{
-    text-align: center;
-    padding: auto;
-    background-color: #7ac124;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  h4{
-    text-align: center;
-    padding: auto;
-    background-color: #21d7a3;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  footer {
-    text-align: center;
-    padding: 40px;
-    border-bottom: 10px;
-  }
-  h5{
-    color: rgb(245, 241, 241);
-  }
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>E-Library</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
 
-    </style>
-<body>
-    
-</body class="comp">
-<h3> <a style="color: #000302" href="b.tech.html"> B.tech</a> </h3>
-</body>  
-<h4> <a style="color: #000302" href="m.tech.html"> M.tech</a> </h4>
+      <style type="text/css">
+         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+}
+.wrapper{
+  background: #fff;
+  padding: 100px 150px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+}
+.wrapper .text{
+  font-size: 35px;
+  font-weight: 600;
+}
+.wrapper p{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.wrapper .btns{
+  display: flex;
+  margin: 30px 0 20px 0;
+}
+.btns a{
+  position: relative;
+  margin: 0 20px;
+  height: 60px;
+  width: 200px;
+  display: block;
+  line-height: 60px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.btns2 a{
+  position: relative;
+  margin: 0 20px;
+  height: 60px;
+  width: 200px;
+  display: block;
+  line-height: 60px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
-</body>
-<footer>
-  <h5><a style="color: #0f0101" href="mailto:driemsapplication@gmail.com?subject=Hi SAS!">driemsapplication@gmail.com</a> </h5>
-</footer>
+.btns a:first-child{
+  background: linear-gradient(-90deg, #f5ce62, #e85a19);
+}
+.btns2 a:last-child{
+  background: linear-gradient(-90deg, #0162c8, #55e7fc);
+}
+.btns a > span{
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripples 0.6s linear infinite;
+}
+.btns2 a > span{
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripples 0.6s linear infinite;
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+      </style>
+      <div class="wrapper">
+         <div class="text">
+            E-Library
+         </div>
+         <p style="size: 5px;">
+            by SAS Group
+         </p>
+         <div class="btns">
+            <a style="color: #000302" href="b.tech.html">B.TECH</a>
+         </div>
+         <div class="btns2">
+          <a style="color: #000302" href="m.tech.html">M.TECH</a>
+         </div>
+      </div>
+      <script>
+         const buttons = document.querySelectorAll("a");
+         buttons.forEach((button) => {
+           button.onclick = function(e){
+             let x = e.clientX - e.target.offsetLeft;
+             let y = e.clientY - e.target.offsetTop;
+             let ripple = document.createElement("span");
+             ripple.style.left = `${x}px`;
+             ripple.style.top = `${y}px`;
+             this.appendChild(ripple);
+             setTimeout(function(){
+               ripple.remove();
+             }, 600); // 1second = 1000ms
+           }
+         });
+         
+      </script>
+       <footer>
+        <h5><a style="color: #0f0101" href="mailto:driemsapplication@gmail.com?subject=Hi SAS!">driemsapplication@gmail.com</a> </h5>
+      </footer>
+   </body>
 </html>
